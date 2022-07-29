@@ -5,7 +5,7 @@ import time
 import shutil, psutil
 from utils_bot import *
 from Adarsh import StartTime
-from pyrogram.enums.parse_mode import ParseMode
+#from pyrogram.enums.parse_mode import ParseMode
 
 
 START_TEXT = """ Your Telegram DC Is : `{}`  """
@@ -27,7 +27,7 @@ async def maintainers(b,m):
                             ]
                         ]
                     ),
-                    parse_mode="markdown",
+                    
                     disable_web_page_preview=True)
             
          
@@ -47,7 +47,7 @@ async def follow_user(b,m):
                             ]
                         ]
                     ),
-                    parse_mode=ParseMode.HTML,
+                    
                     disable_web_page_preview=True)
         
 
@@ -68,7 +68,7 @@ async def list(l, m):
     await l.send_message(chat_id = m.chat.id,
         text = LIST_MSG.format(m.from_user.mention(style="md")),
         reply_to_id = m.id,
-        parse_mode="markdown"
+        
     )
     
     

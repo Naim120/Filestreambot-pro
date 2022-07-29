@@ -12,7 +12,6 @@ from pyrogram.errors import UserNotParticipant
 from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.name)
 from pyrogram.types import ReplyKeyboardMarkup
-from pyrogram.enums.parse_mode import ParseMode
 
 if MY_PASS:
             buttonz=ReplyKeyboardMarkup(
@@ -50,7 +49,7 @@ async def start(b, m):
                 await b.send_message(
                     chat_id=m.chat.id,
                     text="__𝓢𝓞𝓡𝓡𝓨, 𝓨𝓞𝓤 𝓐𝓡𝓔 𝓐𝓡𝓔 𝓑𝓐𝓝𝓝𝓔𝓓 𝓕𝓡𝓞𝓜 𝓤𝓢𝓘𝓝𝓖 𝓜𝓔. 𝓒ᴏɴᴛᴀᴄᴛ ᴛʜᴇ 𝓓ᴇᴠᴇʟᴏᴘᴇʀ__\n\n @agprojectschat **𝙃𝙚 𝙬𝙞𝙡𝙡 𝙝𝙚𝙡𝙥 𝙮𝙤𝙪**",
-                    parse_mode="markdown",
+                    ,
                     disable_web_page_preview=True
                 )
                 return
@@ -66,14 +65,14 @@ async def start(b, m):
                         ]
                     ]
                 ),
-                parse_mode=ParseMode.HTML
+                
             )
              return
         except Exception:
             await b.send_message(
                 chat_id=m.chat.id,
                 text="<i>𝓢𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓮𝓷𝓽 𝔀𝓻𝓸𝓷𝓰</i> <b> <a href='http://t.me/agprojectschat'>CLICK HERE FOR SUPPORT </a></b>",
-                parse_mode=ParseMode.HTML,
+                
                 disable_web_page_preview=True)
             return
     await StreamBot.send_photo(
@@ -98,7 +97,7 @@ async def help_handler(bot, message):
                 await bot.send_message(
                     chat_id=message.chat.id,
                     text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ FROM USING ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ</i>",
-                    parse_mode=ParseMode.HTML,
+                    
                     disable_web_page_preview=True
                 )
                 return
@@ -114,20 +113,20 @@ async def help_handler(bot, message):
                         ]
                     ]
                 ),
-                parse_mode="markdown"
+                
             )
             return
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
                 text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [ADARSH GOEL](https://t.me/agprojectschat).",
-                parse_mode="markdown",
+                ,
                 disable_web_page_preview=True)
             return
     await message.reply_text(
         text="""<b> Send me any file or video i will give you streamable link and download link.</b>\n
 <b> I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands""",
-        parse_mode=ParseMode.HTML,
+        
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
